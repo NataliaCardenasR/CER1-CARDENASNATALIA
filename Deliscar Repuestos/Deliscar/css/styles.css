@@ -1,0 +1,702 @@
+/* G E N E R A L */
+html, body {
+    background-color: #f8f9fa; /* color de fondo */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un cálculo de tamaños correcto */
+    overflow-x: hidden; /* Previene desbordamiento horizontal */
+    /* Fuente merriweather     font-family: 'Merriweather', serif; dentro de las opciones.*/
+    font-family: 'Montserrat', sans-serif; /* Aplicar Montserrat solo a esta sección */
+    font-weight: 900; /* Especificar Montserrat Black */
+    line-height: 1.6; /* Mejor legibilidad */
+    margin-bottom: 0px;
+}
+body {
+    min-height: 100vh; /* 100% alto de pantalla mínimo */
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+
+/* Asegurar que ocupen todo el ancho */
+body, .header, .welcome-section, main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustar .container-fluid para un ancho total */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+/* H E A D E R */
+.header {
+    background-color: #000000; /* Humo blanco */
+    font-weight: 550; /* Especificar Montserrat Black */
+}
+.navbar {
+    background-color: #000000; /* Fondo del header */
+    padding: 10px; /* Elimina el padding extra en el navbar */
+    position: fixed; /* Fija en la parte superior */
+    width: 100%;
+    top: 0;
+    z-index: 10; /* Asegura que esté por encima del contenido */
+}
+.navbar-brand {
+    padding: 5px; /* Elimina el padding interno del logo */
+    margin-left: 0%; /* Elimina cualquier margen a la izquierda */
+}
+.navbar-brand img {
+    height: 40px;
+    transition: transform 0.3s; /* Animación de zoom */
+}
+.navbar-brand:hover img {
+    transform: scale(1.1); /* Zoom en el logo */
+}
+.navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+    transition: all 0.3s; /* Animación para color y zoom */
+}
+.navbar-nav .nav-link:hover {
+    color: #E7473C; /* Rojo brillante */
+    transform: scale(1.1); /* Zoom en el link */
+}
+/* Navbar Toggler Icon */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.menu-icon {
+    background-color: rgba(102, 96, 96, 0.454); /* Fondo ligeramente gris para que se vea el icono */
+    border: none;
+}
+
+
+
+
+/* W E L C O M E    S E C T I O N */
+.welcome-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 400px; /* Altura fija */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding-top: 40px; /* Espacio con el header */
+    margin: 0%;
+    overflow: hidden; /* Previene contenido desbordante */
+}
+/* Bloque diagonal rojo brillante */
+.diagonal-block {
+    width: 50%; /* Ocupa la mitad del ancho */
+    height: 100%; /* Ocupa todo el alto */
+    background-color: #000000; /* Rojo brillante */
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Texto alineado a la izquierda */
+    padding-left: 0px; /* Espacio a la izquierda */
+    z-index: 1;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    
+}
+.welcome-text-container {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+.welcome-text {
+    color: #F0F0F0;
+    font-weight: 900; /* Especificar Montserrat Black */
+    font-size: 3.5rem;
+    animation: slide-in-left 1s ease-out;
+    margin: 0%; /* Sin márgenes extras */
+    padding: 50px 0 0 50px;
+}
+/* Logo */
+.logo-container {
+    flex: 1; /* Ocupa la otra mitad del ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Igual al bloque rojo */
+    position: relative;
+    z-index: 1;
+    width: 50%;
+}
+.welcome-logo {
+    max-height: 80%; /* Ajusta tamaño proporcionalmente */
+    max-width: 100%; /* Asegura que no desborde */
+    animation: slide-in-right 1s ease-out;
+    transition: transform 0.3s, filter 0.3s;
+}
+/* Animaciones */
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.welcome-text:hover {
+    color: #F0F0F0; 
+}
+.diagonal-block:hover {
+    background-color: #ff0000; /* Rojo brillante */
+}
+.welcome-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+/* Responsividad y ajustes esteticos para dispositivos pequeños*/
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column; /* Cambia a disposición en columna */
+        height: auto; /* Altura dinámica */
+    }
+    .diagonal-block {
+        background-color: 
+        #000000; /* Rojo brillante a negro para dar el efecto de que es el fondo normal*/
+        clip-path: none; /* Elimina la forma diagonal */
+        height: auto; /* Ajusta altura al contenido */
+        width: 100%; /* Asegura que no desborde */
+        padding: 5%; /* Espacio interior */
+        align-items: center;
+        justify-content: center;
+    }
+    .welcome-text-container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0px;
+    }
+    .welcome-text {
+        font-size: 1.8rem; /* Tamaño más pequeño */
+        color: #ffffff;
+    }
+    .logo-container {
+        background-color: transparent; /* Fondo sin color */
+        height: auto; /* Altura dinámica */
+        padding: 20px 0; /* Espacio interior */
+    }
+    .welcome-logo {
+        height: 100px; /* Tamaño más pequeño */
+    }
+    .welcome-text:hover {
+        color: #ffffff; /* Rojo brillante */
+    }
+}
+
+
+/* P R O D U C T S   S E C T I O N */
+.productos-section {
+    width: 100%;
+    margin: 0%;
+    padding: 0%; /* Espacio en la parte superior */
+}
+
+.productos-section .container-fluid {
+    width: 100%;
+    margin: 0%;
+
+}
+
+.productos-section h2 {
+    width: 100%; /* Ancho completo de la ventana */
+    margin: 0%; /* Eliminar márgenes laterales */
+    padding: 0; /* Sin relleno extra */
+    position: relative;
+    height: 5vw;
+    font-size: 3.0rem;
+    text-align: center;
+    color: #000000;
+    transition: color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Efecto hover para el texto */
+.productos-section h2:hover {
+    background-color: #000000; /* Fondo rojo */
+    color: #F0F0F0;
+    transition: color 0.3s ease;
+}
+
+/* Estilos especiales para el carrusel de productos */
+.carousel-fade .carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0px);
+    max-width: 100%;
+    margin: 0%;
+}
+
+/* Indicadores del carrusel (puntos abajo) */
+.carousel-indicators [data-bs-target] {
+    width: 60px;
+    height: 4px;
+    border-radius: 5%;
+    background-color: #201f1f81;
+    cursor: pointer;
+}
+
+/* Que el carrusel no se pase de tamaño */
+.carousel-inner img {
+    object-fit: cover;
+}
+
+/* Ajustes para imagen + texto en carrusel */
+.carousel-item .row {
+    min-height: 400px;
+}
+
+/* Mejora para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-item .row {
+        text-align: center;
+    }
+    .carousel-item .col-md-6 {
+        padding: 1rem 0;
+    }
+}
+
+
+/* Efecto de zoom suave en imágenes del carrusel */
+.carousel-item img {
+    transition: transform 0.5s ease; /* transicion suave */
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05); /* agrandar un poquito */
+}
+
+
+/* L O C A T I O N    S E C T I O N */
+.location-section {
+    height: 90dvh;
+    padding: 40px;
+    margin-top: 70px;
+    background-color: #f8f9fa; /* Fondo clarito para rellenar visualmente */
+}
+
+.location-section .container {
+    padding: 0;
+}
+
+.location-section .row {
+    display: flex;
+    align-items: center;
+}
+
+.location-section iframe {
+    border: 3px solid black;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor del mapa */
+    max-width: 100%;
+}
+
+.location-section .col-md-6 {
+    margin-bottom: 0;
+}
+
+/* Estilo para el título principal */
+.location-section h2 {
+    font-weight: 800;
+    color: #c40000; /* Rojo fuerte */
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Estilo para "Lunes a Viernes" */
+.location-section p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de las tarjetas de horarios */
+.location-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos de cada tarjeta (Mañana / Tarde) */
+.schedule-card {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(196, 0, 0, 0.786); /* Rojo */
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+/* Texto principal (Mañana / Tarde) visible al inicio */
+.schedule-card .schedule-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Horario oculto inicialmente */
+.schedule-card .schedule-time {
+    display: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Al hacer hover o click en PC */
+.schedule-card:hover .schedule-title,
+.schedule-card.active .schedule-title {
+    display: none;
+}
+
+.schedule-card:hover .schedule-time,
+.schedule-card.active .schedule-time {
+    display: block;
+}
+
+/* Responsive: en tablet y celular apilar verticalmente */
+@media (max-width: 767px) {
+    .location-section{
+    padding: 0px;
+    margin-top: 100px;
+    }
+
+    .location-hours {
+        flex-direction: column;
+    }
+}
+
+/* C O N T A C T . H T M L */
+.contact-section {
+    width: 100%;
+    height: 95dvh;
+}
+
+.contact-header {
+    width: 100%;
+    height: 30%;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+    padding: 15px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-header:hover {
+    color: #000;
+    background-color: #ff0000; /* Rojo */
+}
+
+.phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phone-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Gris claro */
+    padding: 50px;
+    border-radius: 10px;
+    text-decoration: none; /* Quitar subrayado */
+    color: rgb(196, 0, 0); /* Rojo 196,0,0 */
+    transition: all 0.3s ease;
+}
+
+.phone-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.phone-item p {
+    font-size: 1.2rem;
+    color: rgb(196, 0, 0); /* Rojo 196,0,0 */
+    margin: 0;
+}
+
+.phone-item:hover {
+    background-color: rgb(196, 0, 0); /* Fondo rojo */
+    color: #f0f0f0; /* Texto gris claro */
+}
+
+.phone-item:hover p {
+    color: #f0f0f0; /* Texto gris claro también en el <p> */
+}
+
+.phone-item:hover img {
+    filter: brightness(0) invert(1); /* Imagen invertida para que combine */
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links li {
+    flex: 1;
+}
+
+.social-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.social-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Agregado para zoom */
+}
+
+.social-img:hover {
+    transform: scale(1.1); /* Agregado para zoom */
+}
+
+/* Responsive Styles for small devices */
+@media (max-width: 767px) {
+    .contact-header {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .phone-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-links li {
+        flex: 1;
+    }
+}
+
+/* C O N T A C T . H T M L */
+.contact-section {
+    width: 100%;
+    height: 95dvh;
+}
+
+.contact-header {
+    width: 100%;
+    height: 30%;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+    padding: 15px;
+    transition: all 0.3s ease;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding-top: 35px;
+}
+
+.contact-header:hover {
+    color: #000;
+    background-color: #ff0000; /* Rojo */
+    transform: scale(1.05); /* Agregado para zoom */
+}
+
+.phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phone-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Gris claro */
+    padding: 50px;
+    border-radius: 10px;
+    text-decoration: none; /* Quitar subrayado */
+    color: rgb(196, 0, 0); /* Rojo 196,0,0 */
+    transition: all 0.3s ease;
+}
+
+.phone-item:hover {
+    background-color: rgb(196, 0, 0); /* Fondo rojo */
+    color: #f0f0f0; /* Texto gris claro */
+    transform: scale(1.05); /* Agregado para zoom */
+}
+
+.phone-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.phone-item:hover img {
+    filter: brightness(0) invert(1); /* Imagen invertida para que combine */
+    transform: scale(1.1); /* Agregado para zoom */
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links li {
+    flex: 1;
+}
+
+.social-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Agregado para zoom */
+}
+
+.social-img:hover {
+    transform: scale(1.1); /* Agregado para zoom */
+}
+
+/* Responsive Styles for small devices */
+@media (max-width: 767px) {
+    .contact-header {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .phone-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    .social-links li {
+        flex: 1;
+    }
+}
+
+/* A B O U T  U S  S E C T I O N */
+.about-us-section {
+    margin-top: 40px;
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.ceo-container {
+    margin-bottom: 40px;
+}
+
+.ceo-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace la imagen circular */
+    border: 4px solid rgba(196, 0, 0, 0.591); /* Borde rojo elegante */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Agregado para zoom */
+}
+
+.ceo-image:hover {
+    transform: scale(1.1); /* Agregado para zoom */
+}
+
+.ceo-name {
+    font-size: 1.8rem;
+    color: rgb(196, 0, 0);
+    margin: 5px 0;
+}
+
+.ceo-title {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+}
+
+.about-description p {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+/* F O O T E R */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centrado del texto */
+    padding: 20px 0; /* Espaciado en la parte superior e inferior */
+    margin-bottom: 0px; /* Alineado al fondo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+}

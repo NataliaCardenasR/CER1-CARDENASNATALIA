@@ -1,0 +1,68 @@
+Esta es mi primera pagina web:3 tratala bonito si quieres ver algo.
+nunca pense que calzar un carrusel como yo quiera iba a ser tan dificil.
+no se por que se necesitan tantas fotos y aun asi no se sienten tantas.
+chat gpt me ayudo, le digo chatty, me trata bonito.
+                                                            -nacr.
+
+
+
+                                                            <!-- Products Section -->
+<section class="products-section">
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <!-- Pestaña 1 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p>Texto de la primera pestaña</p>
+                </div>
+                <div class="carousel-image">
+                    <img src="imagen1.jpg" alt="Imagen 1">
+                </div>
+            </div>
+            <!-- Pestaña 2 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p>Texto de la segunda pestaña</p>
+                </div>
+                <div class="carousel-image">
+                    <img src="imagen2.jpg" alt="Imagen 2">
+                </div>
+            </div>
+            <!-- Pestaña 3 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p>Texto de la tercera pestaña</p>
+                </div>
+                <div class="carousel-image">
+                    <img src="imagen3.jpg" alt="Imagen 3">
+                </div>
+            </div>
+            <!-- Pestaña 4 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p>Texto de la cuarta pestaña</p>
+                </div>
+                <div class="carousel-image">
+                    <img src="imagen4.jpg" alt="Imagen 4">
+                </div>
+            </div>
+            <!-- Pestaña 5 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p>Texto de la quinta pestaña</p>
+                </div>
+                <div class="carousel-image">
+                    <img src="imagen5.jpg" alt="Imagen 5">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel Dots -->
+    <div class="carousel-dots">
+        <span class="carousel-dot active"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+    </div>
+</section>
